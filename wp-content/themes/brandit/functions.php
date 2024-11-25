@@ -1,8 +1,23 @@
 <?php
 
 function brandit_load_assets() {
-	wp_enqueue_script( 'theme-main-js', get_theme_file_uri( '/build/index.js' ), array( 'jquery' ), '1.0', true );
-	wp_enqueue_style( 'theme-main-css', get_theme_file_uri( '/build/index.css' ) );
+	$js_asset  = include get_theme_file_path( 'public/js/index.asset.php' );
+	$css_asset = include get_theme_file_path( 'public/css/main.asset.php' );
+
+	wp_enqueue_script(
+		'theme-main-scripts',
+		get_theme_file_uri( '/public/js/index.js' ),
+		$js_asset['dependencies'],
+		$js_asset['version'],
+		true
+	);
+
+	wp_enqueue_style(
+		'theme-main-styles',
+		get_theme_file_uri( 'public/css/main.css' ),
+		$css_asset['dependencies'],
+		$css_asset['version']
+	);
 }
 
 add_action( 'wp_enqueue_scripts', 'brandit_load_assets' );

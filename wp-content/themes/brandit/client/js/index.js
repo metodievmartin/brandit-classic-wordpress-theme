@@ -1,3 +1,3 @@
-import './styles/main.scss';
+import 'jquery';
 
 console.log('JS scripts loaded...');

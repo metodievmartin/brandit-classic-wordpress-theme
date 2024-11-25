@@ -1,3 +1,29 @@
-header {
-  color: red;
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-link {
+  padding-top: rfs-value(15px);
+  padding-bottom: rfs-value(15px);
+}
+
+.nav-underline {
+  .nav-link.dropdown-toggle.show {
+    border-bottom-color: currentcolor;
+  }
+  
+  .nav-link:focus {
+    border-bottom-color: transparent;
+  }
+
+  .nav-link:hover {
+    border-bottom-color: currentcolor;
+  }
+}
+
+.navbar-toggler {
+  margin-top: rfs-value(9px);
+  margin-bottom: rfs-value(9px);
+  border: none;
 }

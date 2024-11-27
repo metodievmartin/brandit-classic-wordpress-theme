@@ -1,18 +1,23 @@
+.header {
+  background: $header-bg;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
 .navbar {
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .nav-link {
-  padding-top: rfs-value(15px);
-  padding-bottom: rfs-value(15px);
+  padding-top: rfs-value(30px);
+  padding-bottom: rfs-value(30px);
 }
 
 .nav-underline {
   .nav-link.dropdown-toggle.show {
     border-bottom-color: currentcolor;
   }
-  
+
   .nav-link:focus {
     border-bottom-color: transparent;
   }

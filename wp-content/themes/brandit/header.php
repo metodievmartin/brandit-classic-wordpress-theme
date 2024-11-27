@@ -77,9 +77,9 @@
                     <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
                 </ul>
-                <a href="" class="btn btn-outline-primary py-2 px-4 d-none d-xl-inline-block">Book Now</a>
-                <button class="btn-search btn btn-outline-primary btn-md-square ms-4 rounded-circle d-none d-lg-inline-flex"
+                <button class="search-button btn-md-square me-4 d-none d-lg-inline-flex"
                         data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                <a href="" class="btn btn-outline-primary py-2 px-4 d-none d-xl-inline-block">Book Now</a>
             </div>
         </nav>
     </div>

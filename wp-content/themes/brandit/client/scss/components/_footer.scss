@@ -1,10 +1,19 @@
 .main-footer-section {
-  background: #675d5d;
-  color: white;
+  background-color: $footer-bg;
+  color: $text-muted;
 
   a, {
-    color: white;
+    color: $text-muted;
   }
+}
+
+.main-footer-section .nav-link::before {
+  position: relative;
+  content: '\f105';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: var(--primary);
+  margin-right: 10px;
 }
 
 .footer-logo {
@@ -15,27 +24,29 @@
   }
 }
 
-.footer-section-heading h3 {
+.footer-section-heading {
+  color: $text-dark;
   margin-bottom: rfs-value(40px);
   position: relative;
 }
 
-.footer-section-heading h3::before {
+.footer-section-heading::before {
   content: '';
   position: absolute;
   left: 0;
   bottom: -15px;
   height: 2px;
   width: rfs-value(50px);
-  background: #ff5e14;
+  background: $primary;
 }
 
 .footer-column ul li a:hover {
-  color: #ff5e14;
+  color: $primary;
 }
 
 .copyright-area {
-  background: #595959;
+  background: #C8C8C8;
+  font-weight: 500;
   padding: rfs-value(25px) 0;
 }
 

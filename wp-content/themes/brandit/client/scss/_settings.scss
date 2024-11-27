@@ -3,6 +3,26 @@
 // ============================================================================
 
 //$font-family-base: 'Roboto', sans-serif;
+$border-radius: 0;
+$btn-border-width: 2px;
+
+// ============================================================================
+// Colours
+// ============================================================================
+
+$primary: #F0018B; // Pink
+$secondary: #89C63F; // Green
+$body-bg: #FAF9F6; // Dirty White
+$header-bg: #ECECEC; // Light Warm Grey
+$footer-bg: #DADADA; // Medium Warm Grey
+$border-color: #E5E5E5; // Slightly Warm Divider Grey
+$text-dark: #333333; // Dark Grey
+$text-muted: #6C757D; // Muted Grey
+$hover-grey: #ADB5BD; // Hover Grey
+$accent-yellow: #FFD700;
+$accent-blue: #007BFF;
+
+$navbar-light-active-color: $primary;
 
 // ============================================================================
 // Breakpoints

@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<?php
+// TODO: some validation and maybe default values
+$contact_email_address = bci_get_contact_email();
+$contact_address       = bci_get_contact_address();
+$contact_phone_number  = bci_get_contact_phone_number();
+?>
+
 <?php get_template_part( 'partials/page-banner' ); ?>
 
     <section class="contacts-section container-xxl py-5 my-5">
@@ -12,7 +19,7 @@
                             <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                             <div>
                                 <h4>Address</h4>
-                                <p>123 Street, New York, USA</p>
+                                <p><?php echo $contact_address; ?></p>
                             </div>
                         </div>
                     </div>
@@ -21,7 +28,7 @@
                             <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                             <div>
                                 <h4>Mail Us</h4>
-                                <p class="mb-2">info@example.com</p>
+                                <p class="mb-2"><?php echo $contact_email_address; ?></p>
                             </div>
                         </div>
                     </div>
@@ -30,7 +37,7 @@
                             <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
                             <div>
                                 <h4>Telephone</h4>
-                                <p class="mb-2">(+012) 3456 7890 123</p>
+                                <p class="mb-2"><?php echo $contact_phone_number; ?></p>
                             </div>
                         </div>
                     </div>
@@ -79,6 +86,7 @@
                                 <label for="message">Message</label>
                             </div>
                         </div>
+
                         <div class="col-12">
                             <button class="btn btn-secondary w-100 py-3" type="submit">Send Message</button>
                         </div>

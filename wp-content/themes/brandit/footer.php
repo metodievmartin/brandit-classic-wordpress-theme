@@ -48,9 +48,9 @@ $contact_phone_number  = bci_get_contact_phone_number();
                 <div class="footer-item">
                     <h3 class="footer-section-heading">Contact Us</h3>
                     <div class="d-flex flex-column align-items-start">
-                        <p><i class="fa fa-map-marker-alt me-2"></i> <?php echo $contact_address; ?></p>
-                        <p><i class="fa fa-phone-alt me-2"></i> <?php echo $contact_phone_number; ?></p>
-                        <p><i class="fas fa-envelope me-2"></i> <?php echo $contact_email_address; ?></p>
+                        <p><i class="fa fa-map-marker-alt me-2"></i> <?php echo esc_html( $contact_address ); ?></p>
+                        <p><i class="fa fa-phone-alt me-2"></i> <?php echo esc_html( $contact_phone_number ); ?></p>
+                        <p><i class="fas fa-envelope me-2"></i> <?php echo esc_html( $contact_email_address ); ?></p>
                         <p><i class="fa fa-clock me-2"></i> 26/7 Hours Service</p>
                     </div>
                 </div>

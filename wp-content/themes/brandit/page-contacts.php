@@ -19,7 +19,7 @@ $contact_phone_number  = bci_get_contact_phone_number();
                             <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                             <div>
                                 <h4>Address</h4>
-                                <p><?php echo $contact_address; ?></p>
+                                <p><?php echo esc_html( $contact_address ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@ $contact_phone_number  = bci_get_contact_phone_number();
                             <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                             <div>
                                 <h4>Mail Us</h4>
-                                <p class="mb-2"><?php echo $contact_email_address; ?></p>
+                                <p class="mb-2"><?php echo esc_html( $contact_email_address ); ?></p>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@ $contact_phone_number  = bci_get_contact_phone_number();
                             <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
                             <div>
                                 <h4>Telephone</h4>
-                                <p class="mb-2"><?php echo $contact_phone_number; ?></p>
+                                <p class="mb-2"><?php echo esc_html( $contact_phone_number ); ?></p>
                             </div>
                         </div>
                     </div>

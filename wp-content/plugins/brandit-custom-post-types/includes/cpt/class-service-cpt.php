@@ -24,7 +24,7 @@ class Service_CPT {
 	// Defaults
 	protected const SERVICES_PER_PAGE_MAX = 30;
 	protected const SERVICES_PER_PAGE_MIN = 1;
-	protected const SERVICES_PER_PAGE_DEFAULT = 10;
+	protected const SERVICES_PER_PAGE_DEFAULT = 6;
 
 	// ========== Constructor ==========
 
@@ -187,9 +187,10 @@ class Service_CPT {
 						<?php
 
 						echo esc_html( sprintf(
-							__( 'Choose a number of services between %d and %d that will be shown at most. Default is 10.', 'bcpt-domain' ),
+							__( 'Choose a number of services between %d and %d that will be shown at most. Default is %d.', 'bcpt-domain' ),
 							self::SERVICES_PER_PAGE_MIN,
-							self::SERVICES_PER_PAGE_MAX
+							self::SERVICES_PER_PAGE_MAX,
+							self::SERVICES_PER_PAGE_DEFAULT
 						) );
 
 						?>

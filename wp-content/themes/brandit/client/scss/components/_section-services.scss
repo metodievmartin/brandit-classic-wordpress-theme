@@ -1,0 +1,50 @@
+.services-section {
+  padding-top: rfs-value(50px);
+  padding-bottom: rfs-value(50px);
+  margin-top: rfs-value(50px);
+  margin-bottom: rfs-value(50px);
+}
+
+.service-item {
+  .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .service-text {
+    width: 100%;
+    background: $services-bg;
+    transition: .5s;
+  }
+
+  a.btn {
+    width: rfs-value(40px);
+    height: rfs-value(40px);
+    display: inline-flex;
+    align-items: center;
+    color: $text-dark;
+    background: $body-bg;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: .5s;
+  }
+}
+
+.service-item:hover .service-text {
+  background: rgba(0, 0, 0, .7);
+}
+
+.service-item * {
+  transition: 0.5;
+}
+
+.service-item:hover * {
+  color: $body-bg;
+}
+
+.service-item:hover .btn {
+  width: rfs-value(140px);
+}

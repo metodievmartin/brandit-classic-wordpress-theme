@@ -1,5 +1,8 @@
 <?php
 
+// Load services cpt functionality
+require_once get_template_directory() . '/includes/custom-post-types/services.php';
+
 function brandit_load_assets() {
 	$js_asset  = include get_theme_file_path( 'public/js/index.asset.php' );
 	$css_asset = include get_theme_file_path( 'public/css/main.asset.php' );

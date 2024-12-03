@@ -11,7 +11,7 @@ $contact_phone_number  = bci_get_contact_phone_number();
             <div class="footer-column col-lg-3 col-md-6">
                 <div class="footer-item">
                     <h2 class="mb-4">
-						<?php get_template_part( 'partials/logo' ); ?>
+						<?php get_template_part( 'template-parts/header/logo' ); ?>
                     </h2>
                     <p class="lh-lg mb-4">
                         There cursus massa at urnaaculis estieSed aliquamellus vitae ultrs condmentum leo massamollis

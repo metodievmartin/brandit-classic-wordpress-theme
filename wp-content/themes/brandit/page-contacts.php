@@ -7,7 +7,7 @@ $contact_address       = bci_get_contact_address();
 $contact_phone_number  = bci_get_contact_phone_number();
 ?>
 
-<?php get_template_part( 'partials/page-banner' ); ?>
+<?php get_template_part( 'template-parts/banners/page-banner' ); ?>
 
     <section class="contacts-section container-xxl py-5 my-5">
         <div class="row justify-content-center">

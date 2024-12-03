@@ -89,7 +89,9 @@ $contact_phone_number  = bci_get_contact_phone_number();
                         </div>
 
                         <div class="col-12">
-                            <button class="btn btn-secondary w-100 py-3" type="submit">Send Message</button>
+                            <button class="submit-button btn btn-outline-secondary text-dark w-100 py-3" type="submit">
+                                Send Message
+                            </button>
                         </div>
                     </div>
                 </form>

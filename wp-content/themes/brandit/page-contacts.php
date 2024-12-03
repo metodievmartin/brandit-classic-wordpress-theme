@@ -46,8 +46,9 @@ $contact_phone_number  = bci_get_contact_phone_number();
             </div>
 
             <div class="col-12 text-center mb-5">
-                <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Get
-                    in touch</small>
+                <h5 class="skewed-title fw-bold text-dark text-uppercase mb-3">
+                    Get in touch
+                </h5>
                 <h1 class="display-5 mb-0">Contact Us For Any Queries!</h1>
             </div>
 

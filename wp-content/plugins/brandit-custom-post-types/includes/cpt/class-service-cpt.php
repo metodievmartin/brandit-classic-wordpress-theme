@@ -49,6 +49,16 @@ class Service_CPT {
 
 	function register_service_post_type() {
 		register_post_type( self::SERVICE_CPT, array(
+			'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'custom-fields' ),
+			'menu_icon'          => 'dashicons-art',
+			'rewrite'            => array( 'slug' => 'services' ),
+			'has_archive'        => true,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_rest'       => true,
+			'can_export'         => true,
 			'labels'             => array(
 				'name'                     => __( 'Services', 'bcpt-domain' ),
 				'singular_name'            => __( 'Service', 'bcpt-domain' ),
@@ -74,15 +84,6 @@ class Service_CPT {
 				'item_scheduled'           => __( 'Service scheduled.', 'bcpt-domain' ),
 				'item_updated'             => __( 'Service updated.', 'bcpt-domain' ),
 			),
-			'has_archive'        => true,
-			'public'             => true,
-			'publicly_queryable' => true,
-			'show_ui'            => true,
-			'show_in_menu'       => true,
-			'show_in_rest'       => true,
-			'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'custom-fields' ),
-			'can_export'         => true,
-			'menu_icon'          => 'dashicons-art',
 		) );
 	}
 

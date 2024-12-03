@@ -80,7 +80,7 @@ class Service_CPT {
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'show_in_rest'       => true,
-			'supports'           => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'revisions' ),
+			'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'custom-fields' ),
 			'can_export'         => true,
 			'menu_icon'          => 'dashicons-art',
 		) );

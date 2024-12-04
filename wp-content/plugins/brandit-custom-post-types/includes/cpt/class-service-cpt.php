@@ -1,7 +1,5 @@
 <?php
 
-namespace BrandIt\Custom_Functionality\CPT;
-
 // Exit if this file accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -43,6 +41,23 @@ class Service_CPT {
 			self::OPTION_SERVICES_SHOWN_PER_PAGE,
 			self::SERVICES_PER_PAGE_DEFAULT
 		);
+	}
+
+	function get_services( $query_args = array() ) {
+		// Set default arguments
+		$query_defaults = array(
+			'posts_per_page' => $this->get_services_shown_per_page(),
+			'order'          => 'ASC',
+			'orderby'        => 'menu_order',
+		);
+
+		$parsed_query_args = wp_parse_args( $query_args, $query_defaults );
+
+		// default overwrite for service post type
+		$parsed_query_args['post_type'] = self::SERVICE_CPT;
+
+		// Perform the query
+		return new WP_Query( $parsed_query_args );
 	}
 
 	// ========== Setup Methods (Hook callbacks) ==========

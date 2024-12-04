@@ -8,14 +8,16 @@ $num_of_words   = $args['num_of_words'] ?? 20;
 $cta_text       = $args['$cta_text'] ?? 'Read More';
 ?>
 
-<div class="col-lg-4 col-md-6">
-    <div class="service-item d-flex position-relative text-center h-100">
+<div class="col-lg-8 col-md-10">
+    <div class="service-item row h-100">
 
 		<?php if ( ! empty( $bg_image_url ) ) : ?>
-            <img class="bg-img" src="<?php echo esc_url( $bg_image_url ) ?>" alt="">
+            <div class="p-0 col-12 col-md-5 service-image">
+                <img class="" src="<?php echo esc_url( $bg_image_url ) ?>" alt="">
+            </div>
 		<?php endif; ?>
 
-        <div class="service-text p-5 d-flex flex-column align-items-center justify-content-start">
+        <div class="col-12 col-md-7 service-text p-5">
 
 			<?php if ( ! empty( $icon_image_url ) ) : ?>
                 <img class="mb-4" src="<?php echo esc_url( $icon_image_url ) ?>" alt="Icon">

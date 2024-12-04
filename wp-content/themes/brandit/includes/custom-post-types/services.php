@@ -4,16 +4,9 @@
  * Render the services section with dynamically queried posts of the `service` custom post type.
  *
  * @param array $section_args
- * @param array $query_args
  */
-function render_services_section( $section_args = array(), $query_args = array() ) {
+function render_services_section( $section_args = array() ) {
 	// Set default arguments
-	$query_defaults = array(
-		'posts_per_page' => 6, // get from the services settings
-		'order'          => 'ASC',
-		'orderby'        => 'menu_order',
-	);
-
 	$section_defaults = array(
 		'show_section_title'    => true,
 		'section_title'         => 'What we offer',
@@ -21,14 +14,9 @@ function render_services_section( $section_args = array(), $query_args = array()
 		'section_subtitle'      => 'Our Services',
 	);
 
-	$parsed_query_args   = wp_parse_args( $query_args, $query_defaults );
 	$parsed_section_args = wp_parse_args( $section_args, $section_defaults );
 
-	// default overwrite
-	$parsed_query_args['post_type'] = 'service';
-
-	// Perform the query
-	$query = new WP_Query( $parsed_query_args );
+	$services_query = get_services_query();
 
 	?>
 
@@ -45,10 +33,10 @@ function render_services_section( $section_args = array(), $query_args = array()
 
 			<?php
 
-			if ( $query->have_posts() ) {
+			if ( $services_query->have_posts() ) {
 
-				while ( $query->have_posts() ) {
-					$query->the_post();
+				while ( $services_query->have_posts() ) {
+					$services_query->the_post();
 
 					$card_args = array(
 						'title'         => get_the_title(),
@@ -58,7 +46,7 @@ function render_services_section( $section_args = array(), $query_args = array()
 					);
 
 					// Call the template part for each service
-					get_template_part( 'template-parts/services/service-item', null, $card_args );
+					get_template_part( 'template-parts/services/service-card', null, $card_args );
 				}
 
 				wp_reset_postdata();

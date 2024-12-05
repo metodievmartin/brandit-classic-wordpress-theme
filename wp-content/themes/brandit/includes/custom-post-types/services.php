@@ -39,10 +39,11 @@ function render_services_section( $section_args = array() ) {
 					$services_query->the_post();
 
 					$card_args = array(
-						'title'         => get_the_title(),
-						'short_summary' => get_the_excerpt(),
-						'bg_image_url'  => get_the_post_thumbnail_url(),
-						'service_url'   => get_the_permalink(),
+						'title'          => get_the_title(),
+						'short_summary'  => get_the_excerpt(),
+						'bg_image_url'   => get_the_post_thumbnail_url(),
+						'service_url'    => get_the_permalink(),
+						'icon_image_url' => get_field( 'service_icon' ),
 					);
 
 					// Call the template part for each service

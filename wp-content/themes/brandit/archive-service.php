@@ -8,7 +8,7 @@ get_template_part(
 );
 ?>
 
-    <div class="services-section container-xxl">
+    <section class="services-section page-section container-xxl">
         <div class="row justify-content-center align-items-center g-4">
 
 			<?php while ( have_posts() ) : the_post();
@@ -26,6 +26,6 @@ get_template_part(
 			endwhile; ?>
 
         </div>
-    </div>
+    </section>
 
 <?php get_footer(); ?>

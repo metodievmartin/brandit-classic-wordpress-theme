@@ -20,7 +20,7 @@ function render_services_section( $section_args = array() ) {
 
 	?>
 
-    <section class="services-section container-xxl">
+    <section class="services-section page-section container-xxl">
         <div class="section-title text-center mx-auto mb-5">
             <h5 class="skewed-title">
 				<?php echo esc_html( $parsed_section_args['section_subtitle'] ) ?>

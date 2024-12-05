@@ -21,7 +21,7 @@ get_template_part(
 						'title'         => get_the_title(),
 						'short_summary' => get_the_excerpt(),
 						'bg_image_url'  => get_the_post_thumbnail_url(),
-						'event_url'     => get_the_permalink(),
+						'permalink'     => get_the_permalink(),
 						'event_date'    => get_field( 'event_date' ),
 					);
 

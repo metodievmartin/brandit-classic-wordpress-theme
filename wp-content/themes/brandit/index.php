@@ -34,7 +34,7 @@ get_template_part(
 							$blog_args = array(
 								'title'         => get_the_title(),
 								'short_summary' => get_the_excerpt(),
-								'event_url'     => get_the_permalink(),
+								'permalink'     => get_the_permalink(),
 								'event_date'    => get_the_date(),
 								'num_of_words'  => 5
 							);

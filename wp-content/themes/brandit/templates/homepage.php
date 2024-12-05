@@ -77,7 +77,7 @@
 						'title'         => get_the_title(),
 						'short_summary' => get_the_excerpt(),
 						'permalink'     => get_the_permalink(),
-						'event_date'    => get_the_date(),
+						'post_date'     => get_the_date(),
 						'num_of_words'  => 10
 					);
 

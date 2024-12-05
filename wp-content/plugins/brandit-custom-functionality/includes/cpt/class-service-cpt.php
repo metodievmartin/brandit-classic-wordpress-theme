@@ -24,9 +24,24 @@ class Service_CPT {
 	protected const SERVICES_PER_PAGE_MIN = 1;
 	protected const SERVICES_PER_PAGE_DEFAULT = 6;
 
+	private static $instance = null;
+
+	/**
+	 * Get the singleton instance of the plugin.
+	 *
+	 * @return Service_CPT
+	 */
+	public static function get_instance() {
+		if ( null === self::$instance ) {
+			self::$instance = new self();
+		}
+
+		return self::$instance;
+	}
+
 	// ========== Constructor ==========
 
-	public function __construct() {
+	private function __construct() {
 		//	Creates Custom Post Types
 		add_action( 'init', array( $this, 'register_service_post_type' ) );
 

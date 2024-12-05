@@ -22,6 +22,7 @@ class BrandIt_Custom_Functionality {
 	private $is_plugin_initialised = false;
 
 	public $service_cpt = null;
+	public $event_cpt = null;
 
 	/**
 	 * Get the singleton instance of the plugin.
@@ -61,6 +62,7 @@ class BrandIt_Custom_Functionality {
 
 		// Include classes.
 		bcf_include( 'includes/cpt/class-service-cpt.php' );
+		bcf_include( 'includes/cpt/class-event-cpt.php' );
 
 		// Initialise Custom Post Types
 		$this->init_custom_post_types();
@@ -72,7 +74,8 @@ class BrandIt_Custom_Functionality {
 	 * Initialise Custom Post Types.
 	 */
 	private function init_custom_post_types() {
-		$this->service_cpt = new Service_CPT();
+		$this->service_cpt = Service_CPT::get_instance();
+		$this->event_cpt   = Event_CPT::get_instance();
 	}
 
 	public function is_initialised() {
@@ -142,4 +145,13 @@ function get_services_query( $query_args = array() ) {
 	}
 
 	return bcf_instance()->service_cpt->get_services( $query_args );
+}
+
+function get_events_query( $query_args = array() ) {
+	if ( ! isset( bcf_instance()->event_cpt ) ) {
+		// returns an empty query object in case the services_cpt are not initialised
+		return new WP_Query( array( 'post__in' => array( 0 ) ) );
+	}
+
+	return bcf_instance()->event_cpt->get_events( $query_args );
 }

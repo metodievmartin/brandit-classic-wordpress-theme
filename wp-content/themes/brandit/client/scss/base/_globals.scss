@@ -5,6 +5,12 @@
   margin-bottom: rfs-value(50px);
 }
 
+.split-section {
+  max-width: rfs-value(660px);
+  width: 100%;
+  padding: rfs-value(40px);
+}
+
 .date-summary-day {
   display: block;
   font-size: 2.02rem;

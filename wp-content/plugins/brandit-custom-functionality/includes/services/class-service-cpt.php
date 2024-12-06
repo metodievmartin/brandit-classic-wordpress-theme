@@ -41,6 +41,8 @@ class Service_CPT {
 		$this->initialise();
 	}
 
+	// ========== Init ==========
+
 	private function initialise() {
 		//	Creates Custom Post Types
 		add_action( 'init', array( $this, 'register_service_post_type' ) );

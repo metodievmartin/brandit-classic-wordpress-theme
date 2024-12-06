@@ -34,7 +34,7 @@ class Service_CPT_Admin {
 	/**
 	 * Get the singleton instance of the plugin.
 	 *
-	 * @return Service_CPT_Admin
+	 * @return Service_CPT_Admin|null
 	 */
 	public static function get_instance() {
 		return self::$instance;

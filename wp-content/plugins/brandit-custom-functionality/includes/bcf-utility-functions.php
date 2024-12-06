@@ -12,7 +12,7 @@ function bcf_get_path( $filename = '' ) {
 }
 
 /**
- * Includes a file within the ACF plugin.
+ * Includes a file within the BCF plugin.
  *
  * @param string $filename The specified file.
  *

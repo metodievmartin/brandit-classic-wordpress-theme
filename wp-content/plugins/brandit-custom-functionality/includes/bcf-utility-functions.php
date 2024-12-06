@@ -24,3 +24,25 @@ function bcf_include( $filename = '' ) {
 		include_once $file_path;
 	}
 }
+
+/**
+ * Removes duplicate items from an array based on a specified key.
+ *
+ * This function iterates over an array of associative arrays or objects
+ * and removes duplicates by ensuring each key's value is unique.
+ *
+ * @param array $array The input array of associative arrays or objects.
+ * @param string $key The key to use for identifying duplicates.
+ *
+ * @return array The filtered array with duplicates removed, preserving the first occurrence.
+ */
+function remove_duplicates_by_key( $array, $key ) {
+	$unique = array();
+	foreach ( $array as $item ) {
+		if ( ! isset( $unique[ $item[ $key ] ] ) ) {
+			$unique[ $item[ $key ] ] = $item;
+		}
+	}
+
+	return array_values( $unique );
+}

@@ -23,6 +23,7 @@ class BrandIt_Custom_Functionality {
 
 	public $service_cpt = null;
 	public $event_cpt = null;
+	public $rest_main = null;
 
 	/**
 	 * Initialises the functionality and makes sure it's done only once.
@@ -72,9 +73,13 @@ class BrandIt_Custom_Functionality {
 		// Include classes.
 		bcf_include( 'includes/services/class-service-main.php' );
 		bcf_include( 'includes/events/class-event-main.php' );
+		bcf_include( 'includes/rest/class-rest-main.php' );
 
 		// Initialise Custom Post Types
 		$this->init_custom_post_types();
+
+		// Initialise Custom REST Endpoints
+		$this->init_custom_rest_endpoints();
 
 		$this->is_plugin_initialised = true;
 	}
@@ -85,6 +90,13 @@ class BrandIt_Custom_Functionality {
 	private function init_custom_post_types() {
 		$this->service_cpt = Service_Main::init();
 		$this->event_cpt   = Event_Main::init();
+	}
+
+	/**
+	 * Initialise Custom REST Endpoints.
+	 */
+	private function init_custom_rest_endpoints() {
+		$this->rest_main = Rest_Main::init();
 	}
 
 	public function is_initialised() {

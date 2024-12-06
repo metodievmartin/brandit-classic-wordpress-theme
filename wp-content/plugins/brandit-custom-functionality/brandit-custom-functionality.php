@@ -10,6 +10,27 @@
  * Domain Path: /languages
  */
 
+
+/*
+ *
+custom-plugin/
+├── assets/
+│   └── css/
+│       └── service-cpt-admin.css
+├── includes/
+│   ├── admin/
+│   │   ├── class-service-cpt-admin.php
+│   │   └── class-event-cpt-admin.php
+│   ├── cpt/
+│   │   ├── class-service-cpt.php
+│   │   └── class-event-cpt.php
+│   ├── templates/
+│   │   └── service-settings-template.php
+│   └── bcf-utility-functions.php
+├── brandit-custom-functionality.php
+
+ */
+
 // Exit if this file accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -25,11 +46,11 @@ class BrandIt_Custom_Functionality {
 	public $event_cpt = null;
 
 	/**
-	 * Get the singleton instance of the plugin.
+	 * Initialises the functionality and makes sure it's done only once.
 	 *
 	 * @return BrandIt_Custom_Functionality
 	 */
-	public static function get_instance() {
+	public static function init() {
 		if ( null === self::$instance ) {
 			self::$instance = new self();
 		}
@@ -38,16 +59,25 @@ class BrandIt_Custom_Functionality {
 	}
 
 	/**
+	 * Get the singleton instance of the plugin.
+	 *
+	 * @return BrandIt_Custom_Functionality|null
+	 */
+	public static function get_instance() {
+		return self::$instance;
+	}
+
+	/**
 	 * Main constructor.
 	 */
 	private function __construct() {
-		// Private to enforce singleton pattern.
+		$this->initialise();
 	}
 
 	/**
 	 * Initialise hooks and load dependencies.
 	 */
-	public function initialise() {
+	private function initialise() {
 		// Define constants.
 		$this->define( 'BRANDIT_CF', true );
 		$this->define( 'BRANDIT_CF_DIR_PATH', plugin_dir_path( __FILE__ ) );
@@ -61,7 +91,7 @@ class BrandIt_Custom_Functionality {
 		include_once BRANDIT_CF_DIR_PATH . 'includes/bcf-utility-functions.php';
 
 		// Include classes.
-		bcf_include( 'includes/cpt/class-service-cpt.php' );
+		bcf_include( 'includes/services/class-service-main.php' );
 		bcf_include( 'includes/cpt/class-event-cpt.php' );
 
 		// Initialise Custom Post Types
@@ -74,7 +104,7 @@ class BrandIt_Custom_Functionality {
 	 * Initialise Custom Post Types.
 	 */
 	private function init_custom_post_types() {
-		$this->service_cpt = Service_CPT::get_instance();
+		$this->service_cpt = Service_Main::init();
 		$this->event_cpt   = Event_CPT::get_instance();
 	}
 
@@ -119,8 +149,8 @@ class BrandIt_Custom_Functionality {
 function bcf_instance() {
 	$bcf = BrandIt_Custom_Functionality::get_instance();
 
-	if ( ! $bcf->is_initialised() ) {
-		$bcf->initialise();
+	if ( empty( $bcf ) ) {
+		$bcf = BrandIt_Custom_Functionality::init();
 	}
 
 	return $bcf;
@@ -144,7 +174,7 @@ function get_services_query( $query_args = array() ) {
 		return new WP_Query( array( 'post__in' => array( 0 ) ) );
 	}
 
-	return bcf_instance()->service_cpt->get_services( $query_args );
+	return bcf_instance()->service_cpt->get_services_query( $query_args );
 }
 
 function get_events_query( $query_args = array() ) {

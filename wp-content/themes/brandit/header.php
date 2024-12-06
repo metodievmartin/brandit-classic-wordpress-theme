@@ -48,12 +48,10 @@
                     </li>
                 </ul>
 
-                <button class="search-button btn-md-square me-4 d-none d-lg-inline-flex"
-                        data-bs-toggle="modal" data-bs-target="#searchModal">
+                <button id="main-search-button" class="search-button btn-md-square me-4 d-none d-lg-inline-flex">
                     <i class="fas fa-search"></i>
                 </button>
 
-                <a href="" class="btn btn-outline-primary py-2 px-4 d-none d-xl-inline-block">Book Now</a>
             </div>
 
         </nav>

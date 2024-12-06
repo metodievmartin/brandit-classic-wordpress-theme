@@ -15,6 +15,15 @@ function brandit_load_assets() {
 		true
 	);
 
+	wp_localize_script(
+		'theme-main-scripts',
+		'brandit_data',
+		array(
+			'root_url' => get_site_url(),
+			'nonce'    => wp_create_nonce( 'wp_rest' ),
+		)
+	);
+
 	wp_enqueue_style(
 		'theme-main-styles',
 		get_theme_file_uri( 'public/css/main.css' ),

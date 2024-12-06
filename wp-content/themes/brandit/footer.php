@@ -64,6 +64,8 @@ $contact_phone_number  = bci_get_contact_phone_number();
         </div>
     </div>
 
+	<?php get_template_part( 'template-parts/search/search-overlay' ) ?>
+
 </footer>
 
 <?php wp_footer(); ?>

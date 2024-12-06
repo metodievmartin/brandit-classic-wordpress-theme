@@ -24,12 +24,14 @@
 
             <hr class="section-break">
             <h2 class="headline headline--medium">Related Services(s)</h2>
-            <ul class="link-list min-list">
+            <ul class="list-unstyled">
 
 				<?php foreach ( $related_services as $service ) : ?>
 
-                    <li>
-                        <a href="<?php echo get_the_permalink( $service ); ?>"><?php echo get_the_title( $service ); ?></a>
+                    <li class="my4">
+                        <a class="h4" href="<?php echo get_the_permalink( $service ); ?>">
+							<?php echo get_the_title( $service ); ?>
+                        </a>
                     </li>
 
 				<?php endforeach; ?>

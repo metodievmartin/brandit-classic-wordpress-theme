@@ -10,27 +10,6 @@
  * Domain Path: /languages
  */
 
-
-/*
- *
-custom-plugin/
-├── assets/
-│   └── css/
-│       └── service-cpt-admin.css
-├── includes/
-│   ├── admin/
-│   │   ├── class-service-cpt-admin.php
-│   │   └── class-event-cpt-admin.php
-│   ├── cpt/
-│   │   ├── class-service-cpt.php
-│   │   └── class-event-cpt.php
-│   ├── templates/
-│   │   └── service-settings-template.php
-│   └── bcf-utility-functions.php
-├── brandit-custom-functionality.php
-
- */
-
 // Exit if this file accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -92,7 +71,7 @@ class BrandIt_Custom_Functionality {
 
 		// Include classes.
 		bcf_include( 'includes/services/class-service-main.php' );
-		bcf_include( 'includes/cpt/class-event-cpt.php' );
+		bcf_include( 'includes/events/class-event-main.php' );
 
 		// Initialise Custom Post Types
 		$this->init_custom_post_types();
@@ -105,7 +84,7 @@ class BrandIt_Custom_Functionality {
 	 */
 	private function init_custom_post_types() {
 		$this->service_cpt = Service_Main::init();
-		$this->event_cpt   = Event_CPT::get_instance();
+		$this->event_cpt   = Event_Main::init();
 	}
 
 	public function is_initialised() {
@@ -183,5 +162,5 @@ function get_events_query( $query_args = array() ) {
 		return new WP_Query( array( 'post__in' => array( 0 ) ) );
 	}
 
-	return bcf_instance()->event_cpt->get_events( $query_args );
+	return bcf_instance()->event_cpt->get_events_query( $query_args );
 }

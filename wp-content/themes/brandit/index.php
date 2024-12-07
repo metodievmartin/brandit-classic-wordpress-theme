@@ -4,7 +4,7 @@
 get_template_part(
 	'template-parts/banners/page-banner',
 	null,
-	array( 'page_title' => get_the_archive_title() )
+	array( 'page_title' => 'Welcome to our Blog' )
 );
 ?>
 
@@ -13,13 +13,13 @@ get_template_part(
         <div class="container-fluid blog py-6">
             <div class="container">
                 <div class="text-center">
-                    <h5 class="skewed-title">Welcome to our Blog</h5>
+                    <h5 class="skewed-title">Blog</h5>
                     <h1 class="display-5 mb-5">Keep up with our latest news.</h1>
                 </div>
             </div>
         </div>
 
-        <div class="row justify-content-center g-5">
+        <div class="row g-5">
 
 			<?php if ( have_posts() ) : ?>
 

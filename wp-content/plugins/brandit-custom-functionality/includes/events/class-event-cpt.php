@@ -86,6 +86,7 @@ class Event_CPT {
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
+			'show_in_nav_menus'  => true,
 			'show_in_rest'       => true,
 			'can_export'         => true,
 			'labels'             => $labels_args,

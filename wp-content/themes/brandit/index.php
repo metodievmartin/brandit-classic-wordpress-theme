@@ -25,24 +25,26 @@ get_template_part(
 				<?php while ( have_posts() ) : the_post(); ?>
                     <div class="col-md-6 col-lg-4">
 
-                        <div class="blog-item">
-                            <div class="overflow-hidden rounded">
+                        <div class="blog-item h-100">
+                            <div class="overflow-hidden rounded image-container">
                                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid w-100" alt="">
                             </div>
 
 							<?php
 							$blog_args = array(
-								'title'         => get_the_title(),
-								'short_summary' => get_the_excerpt(),
-								'permalink'     => get_the_permalink(),
-								'event_date'    => get_the_date(),
-								'num_of_words'  => 5
+								'title'      => get_the_title(),
+								'permalink'  => get_the_permalink(),
+								'event_date' => get_the_date(),
 							);
 
 							// Call the template part for each service
 							get_template_part( 'template-parts/blog/blog-mini-item', null, $blog_args );
 
 							?>
+
+                            <div class="blog-item-content px-4">
+								<?php echo get_excerpt_or_first_n_words( 15 ) ?>
+                            </div>
                         </div>
 
 
@@ -50,13 +52,17 @@ get_template_part(
 				<?php endwhile; ?>
 
 
-				<?php echo paginate_links() ?>
-
 			<?php else : ?>
-                <p><?php esc_html__( 'Sorry, there no posts yet' ); ?></p>
+                <p><?php esc_html__( 'Sorry, there are no posts yet' ); ?></p>
 			<?php endif; ?>
 
         </div>
+
+
+        <div class="pagination-container text-center pt-3 my-4">
+			<?php echo paginate_links() ?>
+        </div>
+
     </section>
 
 <?php get_footer(); ?>

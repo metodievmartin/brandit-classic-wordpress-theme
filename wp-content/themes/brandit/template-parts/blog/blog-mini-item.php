@@ -1,8 +1,7 @@
 <?php
-$title        = $args['title'] ?? 'Blog Title';
-$permalink    = $args['permalink'] ?? '#';
-$num_of_words = $args['num_of_words'] ?? 20;
-$event_date   = isset( $args['event_date'] )
+$title      = $args['title'] ?? 'Blog Title';
+$permalink  = $args['permalink'] ?? '#';
+$event_date = isset( $args['event_date'] )
 	? new DateTime( $args['event_date'] )
 	: new DateTime();
 ?>

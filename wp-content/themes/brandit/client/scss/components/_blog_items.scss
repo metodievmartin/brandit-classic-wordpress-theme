@@ -1,5 +1,17 @@
 .blog-item {
   position: relative;
+
+  .blog-item-content {
+    transform: translateY(-50%);
+  }
+
+  //background-color: #ececec;
+  border: 1px solid $border-color;
+
+  .image-container {
+    max-width: 400px;
+    max-height: 265px;
+  }
 }
 
 .blog-item img {

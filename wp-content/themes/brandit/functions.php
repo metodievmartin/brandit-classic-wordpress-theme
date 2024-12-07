@@ -1,6 +1,7 @@
 <?php
 
 // Load services cpt functionality
+require_once get_template_directory() . '/includes/utils/utility-functions.php';
 require_once get_template_directory() . '/includes/custom-post-types/services.php';
 
 function brandit_load_assets() {

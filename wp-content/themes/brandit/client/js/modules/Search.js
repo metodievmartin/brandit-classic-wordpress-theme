@@ -88,11 +88,11 @@ class Search {
     setTimeout(() => this.searchInput.focus(), 315);
   };
 
-  closeOverlay() {
+  closeOverlay = () => {
     this.searchOverlay.removeClass('search-overlay--active');
     $('body').removeClass('body-no-scroll');
     this.isOverlayOpen = false;
-  }
+  };
 
   generateGeneralInfoSection = (generalInfo) => {
     const sectionTitle = $(

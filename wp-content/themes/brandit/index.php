@@ -9,6 +9,7 @@ get_template_part(
 ?>
 
     <section class="blog-section page-section container-xxl">
+
         <div class="container-fluid blog py-6">
             <div class="container">
                 <div class="text-center">
@@ -23,11 +24,13 @@ get_template_part(
 			<?php if ( have_posts() ) : ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
+
                     <div class="col-md-6 col-lg-4">
 
                         <div class="blog-item h-100">
                             <div class="overflow-hidden rounded image-container">
-                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid w-100" alt="">
+                                <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid w-100"
+                                     alt="Blog post image">
                             </div>
 
 							<?php
@@ -37,7 +40,6 @@ get_template_part(
 								'event_date' => get_the_date(),
 							);
 
-							// Call the template part for each service
 							get_template_part( 'template-parts/blog/blog-mini-item', null, $blog_args );
 
 							?>
@@ -47,17 +49,15 @@ get_template_part(
                             </div>
                         </div>
 
-
                     </div>
-				<?php endwhile; ?>
 
+				<?php endwhile; ?>
 
 			<?php else : ?>
                 <p><?php esc_html__( 'Sorry, there are no posts yet' ); ?></p>
 			<?php endif; ?>
 
         </div>
-
 
         <div class="pagination-container text-center pt-3 my-4">
 			<?php echo paginate_links() ?>

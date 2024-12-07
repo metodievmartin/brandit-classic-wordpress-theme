@@ -26,27 +26,16 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav nav-underline mx-auto">
-                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Service 1</a></li>
-                            <li><a class="dropdown-item" href="#">Service 2</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">See All Services</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-                    <li class="nav-item">
-                        <a href="<?php echo esc_url( site_url( '/contacts' ) ); ?>" class="nav-link">Contacts</a>
-                    </li>
-                </ul>
+
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'header-menu',
+					'depth'          => 2,
+					'walker'         => new WP_Bootstrap_Navwalker(),
+					'menu_class'     => 'navbar-nav nav-underline mx-auto',
+					'container'      => false
+				) );
+				?>
 
                 <button id="main-search-button" class="search-button btn-md-square me-4 d-none d-lg-inline-flex">
                     <i class="fas fa-search"></i>

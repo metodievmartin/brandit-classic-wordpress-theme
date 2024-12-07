@@ -3,6 +3,7 @@
 // Load services cpt functionality
 require_once get_template_directory() . '/includes/utils/utility-functions.php';
 require_once get_template_directory() . '/includes/custom-post-types/services.php';
+require_once get_template_directory() . '/includes/walkers/class-bootstrap-nav-walker.php';
 
 function brandit_load_assets() {
 	$js_asset  = include get_theme_file_path( 'public/js/index.asset.php' );

@@ -57,9 +57,12 @@ class Service_Main {
 		bcf_include( 'includes/services/class-service-cpt.php' );
 		$service_cpt = Service_CPT::init( self::SERVICE_CPT );
 
-		// Init the Admin Menu
-		bcf_include( 'includes/services/class-service-cpt-admin.php' );
-		$service_admin = Service_CPT_Admin::init( $this );
+		// Load the admin related functionality only when the dashboard is open
+		if ( is_admin() ) {
+			// Init the Admin Menu
+			bcf_include( 'includes/services/class-service-cpt-admin.php' );
+			$service_admin = Service_CPT_Admin::init( $this );
+		}
 	}
 
 	// ========== Getters ==========

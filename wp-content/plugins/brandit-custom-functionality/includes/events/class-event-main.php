@@ -7,6 +7,9 @@ class Event_Main {
 	// Custom Post Types
 	const EVENT_CPT = 'event';
 
+	// Meta
+	const EVENT_DATE_META_KEY = 'event_date';
+
 	// Defaults
 	const EVENTS_PER_PAGE_DEFAULT = 2;
 	const EVENT_DATE_DEFAULT_FORMAT = 'Ymd';
@@ -65,12 +68,12 @@ class Event_Main {
 		$today          = date( self::EVENT_DATE_DEFAULT_FORMAT );
 		$query_defaults = array(
 			'posts_per_page' => self::EVENTS_PER_PAGE_DEFAULT,
-			'meta_key'       => 'event_date',
+			'meta_key'       => self::EVENT_DATE_META_KEY,
 			'orderby'        => 'meta_value_num',
 			'order'          => 'ASC',
 			'meta_query'     => array(
 				array(
-					'key'     => 'event_date',
+					'key'     => self::EVENT_DATE_META_KEY,
 					'compare' => '>=',
 					'value'   => $today,
 					'type'    => 'NUMERIC'

@@ -21,8 +21,8 @@ class BrandIt_Custom_Functionality {
 
 	private $is_plugin_initialised = false;
 
-	public $service_cpt = null;
-	public $event_cpt = null;
+	public $service_main = null;
+	public $event_main = null;
 	public $rest_main = null;
 
 	/**
@@ -88,8 +88,8 @@ class BrandIt_Custom_Functionality {
 	 * Initialise Custom Post Types.
 	 */
 	private function init_custom_post_types() {
-		$this->service_cpt = Service_Main::init();
-		$this->event_cpt   = Event_Main::init();
+		$this->service_main = Service_Main::init();
+		$this->event_main   = Event_Main::init();
 	}
 
 	/**
@@ -160,12 +160,12 @@ bcf_instance();
  * @return WP_Query Returns a `WP_Query` object containing the results of the query.
  */
 function get_services_query( $query_args = array() ) {
-	if ( ! isset( bcf_instance()->service_cpt ) ) {
+	if ( ! isset( bcf_instance()->service_main ) ) {
 		// returns an empty query object in case the services_cpt are not initialised
 		return new WP_Query( array( 'post__in' => array( 0 ) ) );
 	}
 
-	return bcf_instance()->service_cpt->get_services_query( $query_args );
+	return bcf_instance()->service_main->get_services_query( $query_args );
 }
 
 function get_events_query( $query_args = array() ) {

@@ -2,6 +2,11 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+	<?php
+	$event_location_name = get_event_location_name( get_the_ID() );
+	$event_address_url   = get_event_address_url( get_the_ID() );
+	?>
+
 	<?php get_template_part( 'template-parts/banners/page-banner' ); ?>
 
     <section class="single-service-section container-xxl py-5 my-5">
@@ -10,6 +15,20 @@
 
             <div class="text-center mb-5">
                 <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="rounded img-thumbnail" alt="">
+            </div>
+
+		<?php endif; ?>
+
+		<?php if ( ! empty( $event_location_name ) ) : ?>
+
+            <div class="event-location-name my-2">Where: <?php echo esc_html( $event_location_name ); ?></div>
+
+		<?php endif; ?>
+
+		<?php if ( ! empty( $event_address_url ) ) : ?>
+
+            <div class="event-location-name my-2">
+                <a href="<?php echo esc_url( $event_address_url ); ?>" target="_blank">Event's Address</a>
             </div>
 
 		<?php endif; ?>
@@ -30,7 +49,7 @@
 
                     <li class="my4">
                         <a class="h4" href="<?php echo get_the_permalink( $service ); ?>">
-							<?php echo get_the_title( $service ); ?>
+							<?php echo esc_html( get_the_title( $service ) ); ?>
                         </a>
                     </li>
 

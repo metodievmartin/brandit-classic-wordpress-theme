@@ -184,3 +184,33 @@ function get_events_query( $query_args = array() ) {
 
 	return bcf_instance()->event_main->get_events_query( $query_args );
 }
+
+/**
+ * Retrieves the event location name metadata for a given event ID.
+ *
+ * @param int $event_id The ID of the event.
+ *
+ * @return string The event location name, or an empty string if not found.
+ */
+function get_event_location_name( $event_id ) {
+	if ( ! isset( bcf_instance()->event_main ) ) {
+		return '';
+	}
+
+	return bcf_instance()->event_main->get_event_location_name( $event_id );
+}
+
+/**
+ * Retrieves the Address URL metadata for a given event ID.
+ *
+ * @param int $event_id The ID of the event.
+ *
+ * @return string The event's Maps URL, or an empty string if not available.
+ */
+function get_event_address_url( $event_id ) {
+	if ( ! isset( bcf_instance()->event_main ) ) {
+		return '';
+	}
+
+	return bcf_instance()->event_main->get_event_address_url( $event_id );
+}

@@ -18,6 +18,7 @@ class Event_Main {
 
 	private $event_cpt;
 	private $event_shortcodes;
+	private $event_metaboxes;
 
 	// ========== Static Methods ==========
 
@@ -56,6 +57,10 @@ class Event_Main {
 		bcf_include( 'includes/events/class-event-cpt.php' );
 		$event_cpt = Event_CPT::init( self::EVENT_CPT );
 
+		//	Init Custom Metaboxes
+		bcf_include( 'includes/events/class-event-metaboxes.php' );
+		$event_metaboxes = Event_Metaboxes::init( self::EVENT_CPT );
+
 		//	Init Custom Shortcodes
 		bcf_include( 'includes/events/class-event-shortcodes.php' );
 		$event_shortcodes = Event_Shortcode::init( $this );
@@ -88,5 +93,21 @@ class Event_Main {
 
 		// Perform the query
 		return new WP_Query( $parsed_query_args );
+	}
+
+	function get_event_location_name( $event_id ) {
+		if ( empty( $event_id ) ) {
+			return '';
+		}
+
+		return get_post_meta( $event_id, Event_Metaboxes::META_EVENT_LOCATION_NAME, true );
+	}
+
+	function get_event_address_url( $event_id ) {
+		if ( empty( $event_id ) ) {
+			return '';
+		}
+
+		return get_post_meta( $event_id, Event_Metaboxes::META_EVENT_ADDRESS_URL, true );
 	}
 }

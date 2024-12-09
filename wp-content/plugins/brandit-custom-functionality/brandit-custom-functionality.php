@@ -71,6 +71,7 @@ class BrandIt_Custom_Functionality {
 		include_once BRANDIT_CF_DIR_PATH . 'includes/bcf-utility-functions.php';
 
 		// Include classes.
+		// bcf_include( 'includes/core/class-base.php' );
 		bcf_include( 'includes/services/class-service-main.php' );
 		bcf_include( 'includes/events/class-event-main.php' );
 		bcf_include( 'includes/rest/class-rest-main.php' );

@@ -170,10 +170,10 @@ function get_services_query( $query_args = array() ) {
 }
 
 function get_events_query( $query_args = array() ) {
-	if ( ! isset( bcf_instance()->event_cpt ) ) {
+	if ( ! isset( bcf_instance()->event_main ) ) {
 		// returns an empty query object in case the services_cpt are not initialised
 		return new WP_Query( array( 'post__in' => array( 0 ) ) );
 	}
 
-	return bcf_instance()->event_cpt->get_events_query( $query_args );
+	return bcf_instance()->event_main->get_events_query( $query_args );
 }

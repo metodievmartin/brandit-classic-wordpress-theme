@@ -14,6 +14,7 @@ class Event_Main {
 	private static $instance = null;
 
 	private $event_cpt;
+	private $event_shortcodes;
 
 	// ========== Static Methods ==========
 
@@ -51,6 +52,10 @@ class Event_Main {
 		//	Init Custom Post Types
 		bcf_include( 'includes/events/class-event-cpt.php' );
 		$event_cpt = Event_CPT::init( self::EVENT_CPT );
+
+		//	Init Custom Shortcodes
+		bcf_include( 'includes/events/class-event-shortcodes.php' );
+		$event_shortcodes = Event_Shortcode::init( $this );
 	}
 
 	// ========== Getters ==========

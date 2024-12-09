@@ -169,6 +169,13 @@ function get_services_query( $query_args = array() ) {
 	return bcf_instance()->service_main->get_services_query( $query_args );
 }
 
+/**
+ * Retrieves a query object with all available events.
+ *
+ * @param array $query_args Associative array of query arguments to customise the query.
+ *
+ * @return WP_Query Returns a `WP_Query` object containing the results of the query.
+ */
 function get_events_query( $query_args = array() ) {
 	if ( ! isset( bcf_instance()->event_main ) ) {
 		// returns an empty query object in case the services_cpt are not initialised

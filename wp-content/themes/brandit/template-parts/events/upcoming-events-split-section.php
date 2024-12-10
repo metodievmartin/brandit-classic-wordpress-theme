@@ -12,9 +12,6 @@ $no_items_found = $args['no_items_found'] ?? __( 'No upcoming events.', 'brandit
 		<?php
 		$today        = date( 'Ymd' );
 		$events_query = get_events_query();
-		?>
-
-		<?php
 
 		if ( $events_query->have_posts() ) {
 
@@ -32,8 +29,9 @@ $no_items_found = $args['no_items_found'] ?? __( 'No upcoming events.', 'brandit
 			}
 
 			$button_args = array(
-				'button_title' => __( 'View All Events', 'brandit' ),
-				'button_link'  => get_post_type_archive_link( 'event' ),
+				'button_title'   => __( 'View All Events', 'brandit' ),
+				'button_link'    => get_post_type_archive_link( 'event' ),
+				'button_classes' => 'btn-outline-primary text-dark',
 			);
 
 			get_template_part( 'template-parts/base/button-link', null, $button_args );

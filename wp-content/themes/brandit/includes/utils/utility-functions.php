@@ -93,3 +93,21 @@ function replace_title_placeholder( $title ) {
 	// Return the original title if no placeholder is found
 	return $sanitized_title;
 }
+
+/**
+ * Get the full URL of a theme asset.
+ *
+ * This function returns the full URL for an asset located in the theme's `assets` folder.
+ * It ensures that the provided path is cleaned up and properly formatted.
+ *
+ * @param string $path The relative path to the asset within the `assets` folder.
+ *                     Example: 'images/example.jpg' or '/images/example.jpg'.
+ *
+ * @return string The full URL of the requested asset.
+ */
+function get_theme_asset_url( $path ) {
+	// Ensure the path doesn't start with a slash
+	$path = ltrim( $path, '/' );
+
+	return get_template_directory_uri() . '/assets/' . $path;
+}

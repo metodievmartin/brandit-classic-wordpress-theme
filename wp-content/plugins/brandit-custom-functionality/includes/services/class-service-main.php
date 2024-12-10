@@ -5,7 +5,7 @@ class Service_Main {
 	// ========== Constants ==========
 
 	// Custom Post Type
-	const SERVICE_CPT = 'service';
+	const SERVICE_CPT_SLUG = 'service';
 
 	// Database Option Names
 	const OPTION_SERVICES_SHOWN_PER_PAGE = 'bcpt_services_shown_per_page';
@@ -55,7 +55,7 @@ class Service_Main {
 	private function initialise() {
 		//	Init Custom Post Types
 		bcf_include( 'includes/services/class-service-cpt.php' );
-		$service_cpt = Service_CPT::init( self::SERVICE_CPT );
+		$service_cpt = Service_CPT::init( self::SERVICE_CPT_SLUG );
 
 		// Load the admin related functionality only when the dashboard is open
 		if ( is_admin() ) {
@@ -85,7 +85,7 @@ class Service_Main {
 		$parsed_query_args = wp_parse_args( $query_args, $query_defaults );
 
 		// default overwrite for service post type
-		$parsed_query_args['post_type'] = self::SERVICE_CPT;
+		$parsed_query_args['post_type'] = self::SERVICE_CPT_SLUG;
 
 		// Perform the query
 		return new WP_Query( $parsed_query_args );

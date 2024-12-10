@@ -60,11 +60,11 @@ class Service_CPT_Admin {
 	// Add a submenu page under the 'Service' post type in the Admin Dashboard
 	public function add_service_submenu() {
 		$services_submenu_page_hook = add_submenu_page(
-			'edit.php?post_type=' . $this->main::SERVICE_CPT,         // Parent slug
+			'edit.php?post_type=' . $this->main::SERVICE_CPT_SLUG,         // Parent slug
 			__( 'Service Settings', 'bcpt-domain' ),                            // Page title
 			__( 'Settings', 'bcpt-domain' ),                                    // Menu title
 			'manage_options',                                          // Capability
-			$this->main::SERVICE_CPT . '-settings',                   // Menu slug
+			$this->main::SERVICE_CPT_SLUG . '-settings',                   // Menu slug
 			[ $this, 'render_service_settings_page' ]                           // Callback function
 		);
 

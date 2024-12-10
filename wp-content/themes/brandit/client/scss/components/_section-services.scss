@@ -2,6 +2,9 @@
 }
 
 .service-image {
+  max-width: rfs-value(365px);
+  max-height: rfs-value(280px);
+  
   img {
     display: block;
     width: 100%;

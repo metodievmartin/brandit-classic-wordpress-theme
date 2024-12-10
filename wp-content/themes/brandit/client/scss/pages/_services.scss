@@ -1,0 +1,7 @@
+.service-listing-page {
+  .services-section {
+    .service-item.even {
+      flex-direction: row-reverse;
+    }
+  }
+}

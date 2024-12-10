@@ -50,6 +50,9 @@ class Service_Taxonomies {
 	private function initialise() {
 		//	Creates Custom Taxonomies
 		add_action( 'init', array( $this, 'create_service_taxonomies' ) );
+
+		// Adjust the 'service_category' main query
+		add_action( 'pre_get_posts', array( $this, 'adjust_services_taxonomy_query' ) );
 	}
 
 	// ========== Setup Methods (Hook callbacks) ==========
@@ -83,5 +86,12 @@ class Service_Taxonomies {
 			$this->cpt_slug,
 			$service_cat_args
 		);
+	}
+
+	function adjust_services_taxonomy_query( $query ) {
+		if ( ! is_admin() && is_tax( self::SERVICE_CATEGORY_SLUG ) && $query->is_main_query() ) {
+			// keep 1 for testing and demonstration purposes
+			$query->set( 'posts_per_page', 1 ); // TODO: add this setting to the dashboard to dynamically control the number
+		}
 	}
 }

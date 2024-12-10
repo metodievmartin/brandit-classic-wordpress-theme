@@ -214,3 +214,16 @@ function get_event_address_url( $event_id ) {
 
 	return bcf_instance()->event_main->get_event_address_url( $event_id );
 }
+
+/**
+ * Retrieves the service category slug.
+ *
+ * @return string The service category slug if available; otherwise, an empty string.
+ */
+function get_service_category_slug() {
+	if ( ! isset( bcf_instance()->service_main ) ) {
+		return '';
+	}
+
+	return bcf_instance()->service_main->get_service_category_slug();
+}

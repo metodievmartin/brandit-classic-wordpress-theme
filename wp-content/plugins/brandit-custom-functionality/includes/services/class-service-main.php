@@ -18,6 +18,7 @@ class Service_Main {
 	private static $instance = null;
 
 	private $service_cpt;
+	private $service_taxonomies;
 	private $service_admin;
 
 	// ========== Static Methods ==========
@@ -57,6 +58,10 @@ class Service_Main {
 		bcf_include( 'includes/services/class-service-cpt.php' );
 		$service_cpt = Service_CPT::init( self::SERVICE_CPT_SLUG );
 
+		//	Init Custom Taxonomies
+		bcf_include( 'includes/services/class-service-taxonomies.php' );
+		$service_taxonomies = Service_Taxonomies::init( self::SERVICE_CPT_SLUG );
+
 		// Load the admin related functionality only when the dashboard is open
 		if ( is_admin() ) {
 			// Init the Admin Menu
@@ -89,5 +94,9 @@ class Service_Main {
 
 		// Perform the query
 		return new WP_Query( $parsed_query_args );
+	}
+
+	function get_service_category_slug() {
+		return Service_Taxonomies::SERVICE_CATEGORY_SLUG;
 	}
 }

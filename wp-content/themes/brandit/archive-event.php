@@ -34,6 +34,11 @@ get_template_part(
 			<?php endwhile; ?>
 
         </div>
+
+        <div class="pagination-container text-center pt-3 my-4">
+			<?php echo paginate_links() ?>
+        </div>
+        
     </section>
 
 <?php get_footer(); ?>

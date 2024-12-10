@@ -25,4 +25,8 @@ $service_item_position = 1;
 		endwhile; ?>
 
     </div>
+
+    <div class="pagination-container text-center pt-3 my-4">
+		<?php echo paginate_links() ?>
+    </div>
 </section>

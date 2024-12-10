@@ -69,3 +69,27 @@ function render_category_button( $name, $slug, $link, $current_term_slug ) {
 	echo esc_html( $name );
 	echo '</a>';
 }
+
+/**
+ * Replace a placeholder in the title with a predefined value.
+ *
+ * @param string $title The title string containing a placeholder.
+ *
+ * @return string The title with the placeholder replaced, or the original title if no placeholder is found.
+ */
+function replace_title_placeholder( $title ) {
+	$sanitized_title = esc_html( $title );
+	$variation_1     = 'Brand<span class="text-primary">It</span>';
+	$variation_2     = '<span class="text-primary">Brand</span>It';
+
+	if ( str_contains( $sanitized_title, '{{TITLE_VAR_1}}' ) ) {
+		return str_replace( '{{TITLE_VAR_1}}', $variation_1, $sanitized_title );
+	}
+
+	if ( str_contains( $sanitized_title, '{{TITLE_VAR_2}}' ) ) {
+		return str_replace( '{{TITLE_VAR_2}}', $variation_2, $sanitized_title );
+	}
+
+	// Return the original title if no placeholder is found
+	return $sanitized_title;
+}

@@ -19,7 +19,7 @@ $cat_filters_args = array(
 );
 ?>
 
-    <main class="service-category-page">
+    <main class="service-listing-page service-category-page">
 
 		<?php get_template_part( 'template-parts/banners/page-banner', null, $page_banner_args ); ?>
 

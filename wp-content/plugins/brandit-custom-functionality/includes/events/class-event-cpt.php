@@ -46,7 +46,7 @@ class Event_CPT {
 		add_action( 'init', array( $this, 'register_event_post_type' ) );
 
 		// Adjust the 'event' main query
-		add_action( 'pre_get_posts', array( $this, 'adjust_event_queries' ) );
+		add_action( 'pre_get_posts', array( $this, 'adjust_events_query' ) );
 	}
 
 
@@ -95,9 +95,11 @@ class Event_CPT {
 		register_post_type( $this->cpt_slug, $cpt_args );
 	}
 
-	function adjust_event_queries( $query ) {
+	function adjust_events_query( $query ) {
 		if ( ! is_admin() && is_post_type_archive( $this->cpt_slug ) && $query->is_main_query() ) {
+			var_dump( $query );
 			$today = date( 'Ymd' );
+			$query->set( 'posts_per_page', 6 ); // TODO: add this setting to the dashboard to dynamically control the number
 			$query->set( 'meta_key', 'event_date' );
 			$query->set( 'orderby', 'meta_value_num' );
 			$query->set( 'order', 'ASC' );

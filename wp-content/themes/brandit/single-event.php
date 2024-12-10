@@ -42,7 +42,9 @@
 		<?php if ( $related_services ) : ?>
 
             <hr class="section-break">
-            <h2 class="headline headline--medium">Related Services(s)</h2>
+            <h2 class="headline headline--medium">
+				<?php esc_html_e( 'Related Service(s)', 'brandit' ); ?>
+            </h2>
             <ul class="list-unstyled">
 
 				<?php foreach ( $related_services as $service ) : ?>

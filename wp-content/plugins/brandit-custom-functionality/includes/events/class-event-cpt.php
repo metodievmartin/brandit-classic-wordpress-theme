@@ -97,7 +97,6 @@ class Event_CPT {
 
 	function adjust_events_query( $query ) {
 		if ( ! is_admin() && is_post_type_archive( $this->cpt_slug ) && $query->is_main_query() ) {
-			var_dump( $query );
 			$today = date( 'Ymd' );
 			$query->set( 'posts_per_page', 6 ); // TODO: add this setting to the dashboard to dynamically control the number
 			$query->set( 'meta_key', 'event_date' );

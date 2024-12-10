@@ -26,26 +26,43 @@ $contact_phone_number  = bci_get_contact_phone_number();
                 </div>
             </div>
             <div class="footer-column col-xl-2 col-lg-2 col-md-6 mb-30">
-                <h3 class="footer-section-heading">Services</h3>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Service 1</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Service 2</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Service 3</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Service 4</a></li>
-                </ul>
+                <h3 class="footer-section-heading"><?php esc_html_e( 'Services', 'brandit' ); ?></h3>
+
+				<?php
+
+				if ( has_nav_menu( 'footer-services-menu' ) ) {
+
+					wp_nav_menu( array(
+						'theme_location' => 'footer-services-menu',
+						'walker'         => new WP_Bootstrap_Navwalker(),
+						'menu_class'     => 'nav flex-column footer-menu',
+						'container'      => false
+					) );
+				}
+
+				?>
+
             </div>
             <div class="footer-column col-xl-2 col-lg-2 col-md-6 mb-30">
-                <h3 class="footer-section-heading">Useful Links</h3>
-                <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Home</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">About</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Contacts</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0">Privacy</a></li>
-                </ul>
+                <h3 class="footer-section-heading"><?php esc_html_e( 'Page Links', 'brandit' ); ?></h3>
+
+				<?php
+
+				if ( has_nav_menu( 'footer-page-links-menu' ) ) {
+					wp_nav_menu( array(
+						'theme_location' => 'footer-page-links-menu',
+						'walker'         => new WP_Bootstrap_Navwalker(),
+						'menu_class'     => 'nav flex-column footer-menu',
+						'container'      => false
+					) );
+				}
+
+				?>
+
             </div>
             <div class="footer-column col-lg-3 col-md-6">
                 <div class="footer-item">
-                    <h3 class="footer-section-heading">Contact Us</h3>
+                    <h3 class="footer-section-heading"><?php esc_html_e( 'Contac Us', 'brandit' ); ?></h3>
                     <div class="d-flex flex-column align-items-start">
                         <p><i class="fa fa-map-marker-alt me-2"></i> <?php echo esc_html( $contact_address ); ?></p>
                         <p><i class="fa fa-phone-alt me-2"></i> <?php echo esc_html( $contact_phone_number ); ?></p>

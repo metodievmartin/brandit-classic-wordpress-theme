@@ -18,12 +18,11 @@ $contact_phone_number  = bci_get_contact_phone_number();
                         its estiegittis miristum.
                     </p>
 
-                    <div class="footer-icon d-flex pt-2">
-                        <a class="btn btn-outline-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-primary me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-primary me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+					<?php if ( is_active_sidebar( 'footer-social-icons' ) ) : ?>
+                        <div class="footer-logo-widget-area">
+							<?php dynamic_sidebar( 'footer-social-icons' ); ?>
+                        </div>
+					<?php endif; ?>
                 </div>
             </div>
             <div class="footer-column col-xl-2 col-lg-2 col-md-6 mb-30">

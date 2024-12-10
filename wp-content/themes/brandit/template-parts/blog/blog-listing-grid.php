@@ -35,7 +35,9 @@ $section_main_title = $args['section_main_title'] ?? __( 'Keep up with our lates
 
 							<?php else: ?>
 
-								<?php // TODO: add a default image here to avoid broken styling ?>
+                                <img class="img-fluid"
+                                     src="<?php echo esc_url( get_theme_asset_url( 'images/brandit-default-thumbnail.jpg' ) ); ?>"
+                                     alt="BrandIt Logo Thumbnail">
 
 							<?php endif; ?>
 

@@ -14,11 +14,22 @@ $service_item_position = $args['service_item_position'] ?? 1;
     <div class="service-item row h-100 <?php echo esc_attr( $service_item_classes ); ?>"
          data-position="<?php echo esc_attr( $service_item_position ); ?>">
 
-		<?php if ( ! empty( $bg_image_url ) ) : ?>
-            <div class="p-0 col-12 col-md-5 service-image">
-                <img class="" src="<?php echo esc_url( $bg_image_url ) ?>" alt="">
-            </div>
-		<?php endif; ?>
+        <div class="p-0 col-12 col-md-5 service-image">
+
+			<?php if ( ! empty( $bg_image_url ) ) : ?>
+
+                <img class="img-fluid" src="<?php echo esc_url( $bg_image_url ) ?>" alt="Service image">
+
+			<?php else: ?>
+
+                <img class="img-fluid"
+                     src="<?php echo esc_url( get_theme_asset_url( 'images/brandit-default-thumbnail.jpg' ) ); ?>"
+                     alt="BrandIt Logo Thumbnail">
+
+			<?php endif; ?>
+
+        </div>
+
 
         <div class="col-12 col-md-7 service-text p-5">
 

@@ -46,6 +46,9 @@ class Service_CPT {
 	private function initialise() {
 		//	Creates Custom Post Types
 		add_action( 'init', array( $this, 'register_service_post_type' ) );
+
+		// Adjust the 'service' main query
+		add_action( 'pre_get_posts', array( $this, 'adjust_services_query' ) );
 	}
 
 	// ========== Setup Methods (Hook callbacks) ==========
@@ -92,4 +95,11 @@ class Service_CPT {
 
 		register_post_type( $this->cpt_slug, $cpt_args );
 	}
+
+	function adjust_services_query( $query ) {
+		if ( ! is_admin() && is_post_type_archive( $this->cpt_slug ) && $query->is_main_query() ) {
+			$query->set( 'posts_per_page', 6 ); // TODO: add this setting to the dashboard to dynamically control the number
+		}
+	}
+
 }

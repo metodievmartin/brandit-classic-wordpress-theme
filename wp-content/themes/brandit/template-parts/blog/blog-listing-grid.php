@@ -26,10 +26,21 @@ $section_main_title = $args['section_main_title'] ?? __( 'Keep up with our lates
                 <div class="col-md-6 col-lg-4">
 
                     <div class="blog-item h-100">
-                        <div class="overflow-hidden rounded image-container">
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid w-100"
-                                 alt="Blog post image">
+
+                        <div class="overflow-hidden image-container">
+
+							<?php if ( has_post_thumbnail() ) : ?>
+
+								<?php the_post_thumbnail( 'medium_large', array( 'class' => 'img-fluid' ) ); ?>
+
+							<?php else: ?>
+
+								<?php // TODO: add a default image here to avoid broken styling ?>
+
+							<?php endif; ?>
+
                         </div>
+
 
 						<?php
 						$blog_args = array(

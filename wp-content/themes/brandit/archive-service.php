@@ -1,46 +1,27 @@
 <?php get_header(); ?>
 
 <?php
-$current_term_slug     = 'all-services';
-$service_item_position = 1;
-$page_banner_args      = array(
-	'page_title' => __( 'All Services', 'brandit' )
+$current_term_slug = 'all-services';
+
+// Page Banner
+$page_banner_args = array(
+	'page_title'    => __( 'All Services', 'brandit' ),
+	'page_subtitle' => 'All services description'
+);
+
+// Category Filter Section
+$cat_filters_args = array(
+	'current_term_slug' => $current_term_slug
 );
 ?>
 
-    <main class="all-services-page">
+    <main class="service-listing-page all-services-page">
 
 		<?php get_template_part( 'template-parts/banners/page-banner', null, $page_banner_args ); ?>
 
-        <section class="service-category-filters page-section container-xxl">
-			<?php display_service_category_buttons( $current_term_slug ); ?>
-        </section>
+		<?php get_template_part( 'template-parts/services/service-category-filter-section', null, $cat_filters_args ); ?>
 
-        <section class="services-section page-section container-xxl">
-            <div class="row justify-content-center align-items-center g-4">
-
-				<?php while ( have_posts() ) : the_post();
-
-					// Reverse every second service item
-					$service_item_classes = ( $service_item_position % 2 === 0 ) ? 'flex-row-reverse' : '';
-
-					$card_args = array(
-						'title'                => get_the_title(),
-						'short_summary'        => get_the_excerpt(),
-						'bg_image_url'         => get_the_post_thumbnail_url(),
-						'service_url'          => get_the_permalink(),
-						'service_item_classes' => $service_item_classes,
-					);
-
-					// Call the template part for each service
-					get_template_part( 'template-parts/services/service-item', null, $card_args );
-
-					// Increment position counter
-					$service_item_position ++;
-				endwhile; ?>
-
-            </div>
-        </section>
+		<?php get_template_part( 'template-parts/services/service-items-listing-section' ); ?>
 
     </main>
 

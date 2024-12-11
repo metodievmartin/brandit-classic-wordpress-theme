@@ -23,6 +23,7 @@ class BrandIt_Custom_Functionality {
 
 	public $service_main = null;
 	public $event_main = null;
+	public $contact_form_main = null;
 	public $rest_main = null;
 
 	/**
@@ -75,6 +76,7 @@ class BrandIt_Custom_Functionality {
 		bcf_include( 'includes/services/class-service-main.php' );
 		bcf_include( 'includes/events/class-event-main.php' );
 		bcf_include( 'includes/rest/class-rest-main.php' );
+		bcf_include( 'includes/contact-form/class-contact-form-main.php' );
 
 		// Initialise Custom Post Types
 		$this->init_custom_post_types();
@@ -89,8 +91,9 @@ class BrandIt_Custom_Functionality {
 	 * Initialise Custom Post Types.
 	 */
 	private function init_custom_post_types() {
-		$this->service_main = Service_Main::init();
-		$this->event_main   = Event_Main::init();
+		$this->service_main      = Service_Main::init();
+		$this->event_main        = Event_Main::init();
+		$this->contact_form_main = Contact_Form_Main::init();
 	}
 
 	/**

@@ -9,7 +9,7 @@ function get_excerpt_or_first_n_words( $number_of_words = 10 ) {
 }
 
 function display_service_category_buttons( $active_term_slug, $show_all_services = true ) {
-	// Fetch terms from the custom taxonomy 'service_category'
+	// Fetch terms from the custom taxonomy 'service-category'
 	$terms = get_terms( array(
 		'taxonomy'   => get_service_category_slug(),
 		'hide_empty' => false, // Do not include categories with no posts

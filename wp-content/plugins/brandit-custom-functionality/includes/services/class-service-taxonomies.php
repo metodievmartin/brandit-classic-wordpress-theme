@@ -9,7 +9,7 @@ class Service_Taxonomies {
 
 	// ========== Constants ==========
 
-	const SERVICE_CATEGORY_SLUG = 'service_category';
+	const SERVICE_CATEGORY_SLUG = 'service-category';
 
 	private static $instance = null;
 	private $cpt_slug;
@@ -51,7 +51,7 @@ class Service_Taxonomies {
 		//	Creates Custom Taxonomies
 		add_action( 'init', array( $this, 'create_service_taxonomies' ) );
 
-		// Adjust the 'service_category' main query
+		// Adjust the 'service-category' main query
 		add_action( 'pre_get_posts', array( $this, 'adjust_services_taxonomy_query' ) );
 	}
 

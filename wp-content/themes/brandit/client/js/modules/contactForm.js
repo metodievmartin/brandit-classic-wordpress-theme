@@ -4,6 +4,8 @@ export function init(contactFormSelector = '#contact-form') {
   $(contactFormSelector).on('submit', async function (e) {
     e.preventDefault();
 
+    // TODO: implement recaptcha
+
     const $contactForm = $(this);
     const $formContainer = $contactForm.closest('.contact-form-container');
     const $submissionAlert = $formContainer.find('.form-submission-alert');

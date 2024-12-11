@@ -92,6 +92,8 @@ class Contact_Form_Rest {
 		$message      = sanitize_textarea_field( $parameters['message'] ?? '' );
 		$subject      = sanitize_text_field( $parameters['subject'] ?? 'No Subject' );
 
+		// TODO: implement recaptcha
+
 		// Validate required fields
 		if ( empty( $sender_name ) || empty( $sender_email ) || empty( $message ) ) {
 			return rest_ensure_response( new WP_Error(

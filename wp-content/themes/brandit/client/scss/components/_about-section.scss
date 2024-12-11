@@ -1,0 +1,32 @@
+.about-us-section {
+  margin-bottom: rfs-value(100px);
+
+  .about-img,
+  .feature-img {
+    position: relative;
+    height: 100%;
+    min-height: rfs-value(600px);
+
+    img {
+      position: absolute;
+      width: 55%;
+      height: 80%;
+      object-fit: cover;
+
+      &:last-child {
+        margin: 20% 0 0 40%;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 60%;
+      height: 80%;
+      top: 10%;
+      left: 20%;
+      border: 5px solid $secondary;
+      z-index: -1;
+    }
+  }
+}

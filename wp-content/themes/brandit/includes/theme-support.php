@@ -12,6 +12,7 @@ function brandit_add_support() {
 	add_image_size( 'hero-banner', 1200, 675, true );
 	add_image_size( 'hero-banner-portrait', 900, 1120, true );
 	add_image_size( 'page-banner', 1500, 350, true );
+	add_image_size( 'about-section-portrait', 500, 700, true );
 
 	// Navigation Menus
 	register_nav_menus( array(

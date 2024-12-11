@@ -37,7 +37,10 @@
 				) );
 				?>
 
-                <button id="main-search-button" class="search-button btn-md-square me-4 d-none d-lg-inline-flex">
+                <button id="main-search-button"
+                        class="px-3 py-2 search-button align-items-center d-none d-lg-inline-flex">
+                    <span class="search-shortcut macos">⌘ + K</span>
+                    <span class="search-shortcut windows">Ctrl + K</span>
                     <i class="fas fa-search"></i>
                 </button>
 

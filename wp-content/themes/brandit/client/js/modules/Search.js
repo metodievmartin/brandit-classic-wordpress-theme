@@ -15,7 +15,15 @@ class Search {
   }
 
   events = () => {
+    let user_agent_os = 'Windows';
+
+    if (window.navigator.userAgent.indexOf('Mac') !== -1) {
+      user_agent_os = 'MacOS';
+    }
+
+    $('body').attr('data-os', user_agent_os);
     $(document).on('keydown', this.keyPressDispatcher);
+
     this.openButton.on('click', this.openOverlay);
     this.closeButton.on('click', this.closeOverlay);
     this.searchInput.on('keyup', this.typingLogic);

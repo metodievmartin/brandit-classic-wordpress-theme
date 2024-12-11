@@ -9,11 +9,11 @@ get_template_part(
 ?>
 
     <section class="services-section page-section container-xxl">
-        <div class="row justify-content-center g-5">
+        <div class="row justify-content-between g-5 px-5">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-6">
 
 					<?php
 
@@ -38,7 +38,7 @@ get_template_part(
         <div class="pagination-container text-center pt-3 my-4">
 			<?php echo paginate_links() ?>
         </div>
-        
+
     </section>
 
 <?php get_footer(); ?>

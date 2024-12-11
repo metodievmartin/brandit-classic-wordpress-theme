@@ -18,7 +18,7 @@ $cta_text       = $args['$cta_text'] ?? 'Read More';
         <div class="service-text p-5 d-flex flex-column align-items-center justify-content-start">
 
 			<?php if ( ! empty( $icon_image_url ) ) : ?>
-                <img class="mb-4" src="<?php echo esc_url( $icon_image_url ) ?>" alt="Icon">
+                <img class="mb-4 service-icon-img" src="<?php echo esc_url( $icon_image_url ) ?>" alt="Icon">
 			<?php endif; ?>
 
             <h3 class="mb-3"><?php echo esc_html( $title ); ?></h3>

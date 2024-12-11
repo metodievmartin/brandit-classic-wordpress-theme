@@ -19,7 +19,7 @@ $post_date     = isset( $args['post_date'] )
     </div>
     <div class="p-3 border">
         <p class="mb-1">
-            <a href="<?php echo esc_url( $permalink ); ?>" class="h5">
+            <a href="<?php echo esc_url( $permalink ); ?>" class="h5 blog-title">
 				<?php echo esc_html( $title ); ?>
             </a>
         </p>

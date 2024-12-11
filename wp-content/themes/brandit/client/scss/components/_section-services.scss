@@ -4,7 +4,7 @@
 .service-image {
   max-width: rfs-value(365px);
   max-height: rfs-value(280px);
-  
+
   img {
     display: block;
     width: 100%;
@@ -28,6 +28,10 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+  }
+
+  .service-icon-img {
+    max-width: rfs-value(100px);
   }
 
   .service-text {

@@ -16,6 +16,11 @@
   }
 }
 
+.blog-title {
+  font-size: rfs-value(18px);
+  text-transform: capitalize;
+}
+
 .blog-item img {
   transition: 0.5s;
 }

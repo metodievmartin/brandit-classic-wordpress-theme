@@ -17,7 +17,7 @@ $event_date = isset( $args['event_date'] )
     </div>
 
     <div class="p-3 flex-grow-1 d-flex align-items-center bg-body">
-        <a href="<?php echo esc_url( $permalink ); ?>" class="h5">
+        <a href="<?php echo esc_url( $permalink ); ?>" class="h5 blog-title">
 			<?php echo esc_html( $title ); ?>
         </a>
     </div>

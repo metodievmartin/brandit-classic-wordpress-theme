@@ -4,7 +4,8 @@ $banner_fields          = get_fields( $page_id );
 $banner_main_title      = $banner_fields['hero_banner_main_title'];
 $banner_secondary_title = $banner_fields['hero_banner_secondary_title'];
 $banner_image           = $banner_fields['hero_banner_image'];
-//var_dump( $banner_image );
+$button_cta             = $banner_fields['hero_banner_button_cta'] ?? '';
+$button_url             = $banner_fields['hero_banner_button_url'] ?? '';
 ?>
 
 <section class="hero-banner page-section py-6 my-6 mt-0">
@@ -25,11 +26,16 @@ $banner_image           = $banner_fields['hero_banner_image'];
                     </h1>
 				<?php endif; ?>
 
+				<?php if ( ! empty( $button_cta ) && ! empty( $button_url ) ): ?>
 
-                <a href="" class="btn btn-primary border-2 text-light py-3 px-4 px-md-5 me-4">Book
-                    Now</a>
-                <a href="" class="btn btn-outline-primary py-3 px-4 px-md-5">Know
-                    More</a>
+
+                    <a class="btn btn-primary border-2 text-light py-3 px-4 px-md-5 me-4"
+                       href="<?php echo esc_url( $button_url ); ?>">
+						<?php echo esc_html( $button_cta ); ?>
+                    </a>
+
+				<?php endif; ?>
+
             </div>
 
 			<?php if ( ! empty( $banner_image ) && isset( $banner_image['sizes'] ) ): ?>

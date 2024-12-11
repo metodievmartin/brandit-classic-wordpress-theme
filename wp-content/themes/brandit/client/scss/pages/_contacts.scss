@@ -2,4 +2,46 @@
   .submit-button {
     border-width: 1px;
   }
+
+  .loading-spinner {
+    display: none;
+  }
+
+  .submit-button:disabled {
+    .submit-text {
+      display: none;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+    }
+  }
+}
+
+.contact-form-container {
+  .alert-message {
+    display: none;
+  }
+
+  .alert-success {
+    .alert-message.type-success {
+      display: block;
+    }
+  }
+
+  .alert-danger {
+    .alert-message.type-error {
+      display: block;
+    }
+  }
+
+  .btn-close {
+    padding-top: rfs-value(15px);
+    padding-bottom: rfs-value(8px);
+  }
+
+  .alert {
+    padding-top: rfs-value(8px);
+    padding-bottom: rfs-value(8px);
+  }
 }

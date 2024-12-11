@@ -61,8 +61,8 @@ class Service_CPT_Admin {
 	public function add_service_submenu() {
 		$services_submenu_page_hook = add_submenu_page(
 			'edit.php?post_type=' . $this->main::SERVICE_CPT_SLUG,         // Parent slug
-			__( 'Service Settings', 'bcpt-domain' ),                            // Page title
-			__( 'Settings', 'bcpt-domain' ),                                    // Menu title
+			__( 'Service Settings', 'bcf-domain' ),                            // Page title
+			__( 'Settings', 'bcf-domain' ),                                    // Menu title
 			'manage_options',                                          // Capability
 			$this->main::SERVICE_CPT_SLUG . '-settings',                   // Menu slug
 			[ $this, 'render_service_settings_page' ]                           // Callback function
@@ -88,7 +88,7 @@ class Service_CPT_Admin {
 			|| ! wp_verify_nonce( $_POST[ self::NONCE_SAVE_SERVICES_SETTINGS ], self::NONCE_SAVE_SERVICES_SETTINGS_ACTION )
 			|| ! current_user_can( 'manage_options' )
 		) {
-			$this->render_error_message( __( 'Sorry, you are not allowed to perform this action', 'bcpt-domain' ) );
+			$this->render_error_message( __( 'Sorry, you are not allowed to perform this action', 'bcf-domain' ) );
 
 			return;
 		}
@@ -103,7 +103,7 @@ class Service_CPT_Admin {
 			) {
 				$this->render_error_message(
 					sprintf(
-						__( 'Sorry, the selected value of %d is invalid. Please, choose a value between %d and %d.', 'bcpt-domain' ),
+						__( 'Sorry, the selected value of %d is invalid. Please, choose a value between %d and %d.', 'bcf-domain' ),
 						$services_shown_per_page,
 						$this->main::SERVICES_PER_PAGE_MIN,
 						$this->main::SERVICES_PER_PAGE_MAX
@@ -114,7 +114,7 @@ class Service_CPT_Admin {
 
 			update_option( $this->main::OPTION_SERVICES_SHOWN_PER_PAGE, $services_shown_per_page );
 
-			$this->render_success_message( __( 'Your changes have been saved successfully.', 'bcpt-domain' ) );
+			$this->render_success_message( __( 'Your changes have been saved successfully.', 'bcf-domain' ) );
 		}
 
 	}
@@ -125,7 +125,7 @@ class Service_CPT_Admin {
 		?>
 
         <div class="wrap my-contact-info-settings">
-            <h1><?php echo esc_html__( 'Services Settings', 'bcpt-domain' ); ?></h1>
+            <h1><?php echo esc_html__( 'Services Settings', 'bcf-domain' ); ?></h1>
 
 			<?php
 
@@ -151,14 +151,14 @@ class Service_CPT_Admin {
                                min="1"
                                max="30">
                         <label for="<?php echo $this->main::OPTION_SERVICES_SHOWN_PER_PAGE ?>">
-							<?php esc_html_e( 'Services shown at most', 'bcpt-domain' ); ?>
+							<?php esc_html_e( 'Services shown at most', 'bcf-domain' ); ?>
                         </label>
                     </div>
                     <p class="description">
 						<?php
 
 						echo esc_html( sprintf(
-							__( 'Choose a number of services between %d and %d that will be shown at most. Default is %d.', 'bcpt-domain' ),
+							__( 'Choose a number of services between %d and %d that will be shown at most. Default is %d.', 'bcf-domain' ),
 							$this->main::SERVICES_PER_PAGE_MIN,
 							$this->main::SERVICES_PER_PAGE_MAX,
 							$this->main::SERVICES_PER_PAGE_DEFAULT
@@ -169,7 +169,7 @@ class Service_CPT_Admin {
                 </div>
 
                 <input type="submit" id="submit" class="button button-primary"
-                       value="<?php esc_html_e( 'Save Changes', 'bcpt-domain' ) ?>">
+                       value="<?php esc_html_e( 'Save Changes', 'bcf-domain' ) ?>">
             </form>
         </div>
 

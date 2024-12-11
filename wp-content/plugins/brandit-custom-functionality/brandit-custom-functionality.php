@@ -6,7 +6,7 @@
  * Version: 1.0
  * Author: Martin Metodiev
  * Author URI: https://github.com/metodievmartin
- * Text Domain: bcpt-domain
+ * Text Domain: bcf-domain
  * Domain Path: /languages
  */
 

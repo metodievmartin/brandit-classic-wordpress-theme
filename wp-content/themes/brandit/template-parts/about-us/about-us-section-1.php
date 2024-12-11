@@ -47,7 +47,7 @@ $button_url      = $section_fields['section_1_button_url'] ?? '';
 			<?php if ( ! empty( $button_cta ) && ! empty( $button_url ) ): ?>
 
 
-                <a class="btn btn-primary py-3 px-5" href="<?php echo esc_url( $button_url ); ?>">
+                <a class="btn btn-primary text-light py-3 px-5" href="<?php echo esc_url( $button_url ); ?>">
 					<?php echo esc_html( $button_cta ); ?>
                 </a>
 

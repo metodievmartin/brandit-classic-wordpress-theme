@@ -14,7 +14,7 @@ $button_url             = $banner_fields['hero_banner_button_url'] ?? '';
             <div class="title-container col-lg-7 col-md-12">
 
 				<?php if ( ! empty( $banner_secondary_title ) ): ?>
-                    <h5 class=" m-0 py-3">
+                    <h5 class="text-uppercase fw-lighter m-0 py-3">
 						<?php echo esc_html( $banner_secondary_title ); ?>
                     </h5>
 				<?php endif; ?>
@@ -29,7 +29,7 @@ $button_url             = $banner_fields['hero_banner_button_url'] ?? '';
 				<?php if ( ! empty( $button_cta ) && ! empty( $button_url ) ): ?>
 
 
-                    <a class="btn btn-primary border-2 text-light py-3 px-4 px-md-5 me-4"
+                    <a class="btn btn-primary border-2 text-light py-3 px-4 px-md-5"
                        href="<?php echo esc_url( $button_url ); ?>">
 						<?php echo esc_html( $button_cta ); ?>
                     </a>
